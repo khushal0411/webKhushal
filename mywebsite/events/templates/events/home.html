@@ -1,0 +1,31 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+
+<center>
+<div class="card" style="width: 18rem;">
+
+  <div class="card-body">
+    <h5 class="card-title">Hello {{name}}</h5>
+    <p class="card-text">You have events for {{year}},{{month}}
+    Month : {{month}} / {{month_number}}</p>
+        <p>{{cal|safe}}</p>
+    </br>
+    <p><b><i>Copyright (C) {{current_year}} Joy Patel Inc.</i></b></p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+</center>
+
+</body>
+</html>
+
+{% endblock %}

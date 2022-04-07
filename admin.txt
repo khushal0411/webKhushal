@@ -1,0 +1,4 @@
+django
+username : admin
+password : 19124018@nuv
+email address : joypatel242001@gmail.com

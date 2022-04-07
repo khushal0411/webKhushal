@@ -1,0 +1,53 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+
+<div class="container">
+      <br/>
+      {% for event in events_list %}
+    <div class="card" style="width: 50rem;">
+
+  <div class="card-body">
+    <h5 class="card-title">{{event}}</h5>
+
+          <ul>
+              <li><strong>Date        :</strong> {{event.event_data}}</li>
+              <li><strong>Venue       :</strong> {{event.venue}}</li>
+              <ul>
+                  <li><strong>Venue Address   :</strong> {{event.venue.address}}</li>
+                  <li><strong>Venue Zip Code  :</strong> {{event.venue.zip_code}}</li>
+                  <li><strong>Venue Phone No. :</strong> {{event.venue.phone}}</li>
+                  <li><strong>Venue WebSite   :</strong> {{event.venue.web}}</li>
+                  <li><strong>Venue Email     :</strong> {{event.venue.email}}</li>
+              </ul>
+              <li><strong>Manager     :</strong> {{event.manager}}</li>
+              <li><strong>Description :</strong> {{event.description}}</li>
+              <li><strong>Attendees   :</strong> </li>
+              {% for user in event.attendees.all %}
+              <ul>
+                  <li>{{user}}</li>
+              </ul>
+
+              {% endfor %}
+
+          </ul>
+
+      </div>
+    </div><br/>
+      {% endfor %}
+  </div>
+
+
+
+
+</body>
+</html>
+
+{% endblock %}
