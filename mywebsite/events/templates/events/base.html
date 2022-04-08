@@ -13,10 +13,14 @@
   <body>
 
     {% include 'events/navbar.html' %}
+
+    <!--{% include 'events/side_nav.html' %}-->
+
     <br/>
     {% block content %}
 
     {% endblock %}
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 
@@ -30,12 +34,8 @@
     -->
   </body>
 </html>
+{% include 'events/footer.html' %}
 
-
-
-
-<br><br>
-<h1>footer stuff</h1>
 
 
 
