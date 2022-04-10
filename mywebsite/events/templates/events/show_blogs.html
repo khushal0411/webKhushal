@@ -1,0 +1,23 @@
+{% extends 'events/base.html' %}
+
+
+{% block content %}
+
+
+    <div class="container">
+        <center>
+        <h1><b>{{event}}</b></h1>
+            <br/>
+       {% if event.image %}
+             <img style="border-radius:30px;" height="50%" width="60%" src="{{event.image.url}}"
+                    />
+{% endif %}
+            <p><i>{{ event.imgsrc }}</i></p>
+            </center>
+        <br/><br/>
+        <p>{{event.description}}</p>
+    </div>
+
+
+
+{% endblock %}

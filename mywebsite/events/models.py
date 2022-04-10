@@ -27,6 +27,8 @@ class Event(models.Model):
     name = models.CharField('Event Name', max_length=120)
     event_data = models.DateTimeField('Event Date')
     # venue = models.CharField('Event Venue', max_length=120)
+    image = models.ImageField(upload_to='images',blank=True, null=True)
+    imgsrc = models.CharField('Image Source', max_length=120,blank=True, null=True)
     venue = models.ForeignKey(Venue, blank=True, null=True, on_delete=models.CASCADE)
     manager = models.CharField('Event Manager', max_length=120)
     description = models.TextField(blank=True)
