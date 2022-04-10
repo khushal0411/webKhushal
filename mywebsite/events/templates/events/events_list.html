@@ -2,49 +2,60 @@
 
 {% block content %}
 
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>home</title>
 </head>
 <body>
 
-<div class="container">
-      <br/>
-      {% for event in events_list %}
-    <div class="card" style="width: 50rem;">
 
-  <div class="card-body">
-    <h5 class="card-title">{{event}}</h5>
+<center>
+<div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Explore Varieties of Blogs</h1>
+        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
 
-          <ul>
-              <li><strong>Date        :</strong> {{event.event_data}}</li>
-              <li><strong>Venue       :</strong> {{event.venue}}</li>
-              <ul>
-                  <li><strong>Venue Address   :</strong> {{event.venue.address}}</li>
-                  <li><strong>Venue Zip Code  :</strong> {{event.venue.zip_code}}</li>
-                  <li><strong>Venue Phone No. :</strong> {{event.venue.phone}}</li>
-                  <li><strong>Venue WebSite   :</strong> {{event.venue.web}}</li>
-                  <li><strong>Venue Email     :</strong> {{event.venue.email}}</li>
-              </ul>
-              <li><strong>Manager     :</strong> {{event.manager}}</li>
-              <li><strong>Description :</strong> {{event.description}}</li>
-              <li><strong>Attendees   :</strong> </li>
-              {% for user in event.attendees.all %}
-              <ul>
-                  <li>{{user}}</li>
-              </ul>
-
-              {% endfor %}
-
-          </ul>
-
+        </p>
       </div>
-    </div><br/>
-      {% endfor %}
-  </div>
+    </div>
+</center>
 
 
+
+<div class="container">
+
+    <!--<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">-->
+
+         <div  class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"    style="padding-bottom : 20px;">
+{% for event in events_list %}
+        <div class="col">
+
+          <div class="card shadow-sm">
+            <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+-->
+             <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                    />
+
+            <div class="card-body">
+
+                <h3>{{event}}</h3>
+
+              <p class="card-text">{{event.description}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+
+                <small class="text-muted"><i>{{event.manager}}</i></small>
+              </div>
+            </div>
+          </div>
+        </div>
+             {% endfor %}
+</div>
+
+
+</div>
 
 
 </body>
