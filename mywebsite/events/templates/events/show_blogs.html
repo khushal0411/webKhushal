@@ -5,33 +5,42 @@
 <html>
 
 <style>
-
-    p {
-
-    font-size:20px;
-
-    }
-
+p{
+ font-size:20px;
+}
 </style>
 
 <body>
 
  <div class="container">
+
+
+     <div class="p-4 p-md-5 mb-4 text-white bg-dark" style="border-radius:30px;">
+    <div class="col-md-15 px-0">
+      <h1 class="display-4 fst-italic">{{event}}</h1>
+      <p class="lead my-3">By {{ event.manager }} | <i>{{ event.event_data }}</i></p>
+        <p class="lead my-3" style="font-size:12px;"><i>TechieSpod</i></p>
+
+    </div>
+  </div>
+
+
         <center>
-        <h1><b>{{event}}</b></h1>
-            <br/>
+
        {% if event.image %}
              <img style="border-radius:30px;" height="50%" width="60%" src="{{event.image.url}}"
                     />
 {% endif %}
             <h6><i>{{ event.imgsrc }}</i></h6>
             </center>
-        <br/><br/>
-     <h5>By {{ event.manager }} | {{ event.event_data }}</h5>
-     <br/>
-        <p>{{event.description|linebreaks}}</p>
-    </div>
 
+
+     <p style="display:inline-block;" >
+
+         <span>{{event.description|linebreaks}}</span>
+     </p>
+
+ </div>
 </body>
 
 </html>
