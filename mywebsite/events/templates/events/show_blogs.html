@@ -2,9 +2,21 @@
 
 
 {% block content %}
+<html>
 
+<style>
 
-    <div class="container">
+    p {
+
+    font-size:20px;
+
+    }
+
+</style>
+
+<body>
+
+ <div class="container">
         <center>
         <h1><b>{{event}}</b></h1>
             <br/>
@@ -12,11 +24,19 @@
              <img style="border-radius:30px;" height="50%" width="60%" src="{{event.image.url}}"
                     />
 {% endif %}
-            <p><i>{{ event.imgsrc }}</i></p>
+            <h6><i>{{ event.imgsrc }}</i></h6>
             </center>
         <br/><br/>
-        <p>{{event.description}}</p>
+     <h5>By {{ event.manager }} | {{ event.event_data }}</h5>
+     <br/>
+        <p>{{event.description|linebreaks}}</p>
     </div>
+
+</body>
+
+</html>
+
+
 
 
 
