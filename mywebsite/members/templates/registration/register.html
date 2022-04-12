@@ -1,0 +1,15 @@
+{% extends 'events/base.html' %}
+{% block title %}LogIn{% endblock %}
+{% block content %}
+
+<h1>LogUn..</h1>
+<br/>
+<div class="from-group">
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn_secondary">Log Un</button>
+  </form>
+</div>
+
+{% endblock %}
