@@ -11,6 +11,8 @@ from . models import Event, Venue
 def all_events(request):
     name = 'MyClub'
     events_list = Event.objects.all()
+
+
     return render(request, 'events/events_list.html',{
         'name' : name,
         'events_list' : events_list,
@@ -42,3 +44,7 @@ def home(request, year=datetime.now().year, month=datetime.now().strftime('%B'))
     })
 
 
+def apps(request):
+
+    return render(request, 'events/apps.html',
+                  {})

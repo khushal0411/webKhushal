@@ -1,5 +1,5 @@
 from django.db import models
-
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 class Venue(models.Model):
@@ -25,13 +25,14 @@ class MyClubUser(models.Model):
 
 class Event(models.Model):
     name = models.CharField('Event Name', max_length=120)
-    event_data = models.DateTimeField('Event Date')
+    event_data = models.DateTimeField('Event Date', auto_now_add=True)
     # venue = models.CharField('Event Venue', max_length=120)
     image = models.ImageField(upload_to='images',blank=True, null=True)
     imgsrc = models.CharField('Image Source', max_length=120,blank=True, null=True)
     venue = models.ForeignKey(Venue, blank=True, null=True, on_delete=models.CASCADE)
     manager = models.CharField('Event Manager', max_length=120)
-    description = models.TextField(blank=True)
+    description = RichTextField(blank=True, null=True)
+    small_des = models.TextField(blank=True)
     attendees = models.ManyToManyField(MyClubUser, blank=True)
 
     def __str__(self):
