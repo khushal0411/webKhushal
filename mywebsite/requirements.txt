@@ -1,0 +1,11 @@
+flask
+numpy
+sklearn
+gunicorn
+django
+os
+sys
+calendar
+datetime
+ckeditor
+
