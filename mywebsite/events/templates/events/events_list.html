@@ -32,36 +32,7 @@
 
     <!--<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">-->
 
-         <div  class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"    style="padding-bottom : 20px;">
-{% for event in events_list %}
-        <div class="col">
 
-          <div class="card shadow-sm" style=" border-radius:30px;">
-            <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
--->
-
-              {% if event.image %}
-             <img style=" border-radius:30px;" src="{{event.image.url}}"
-             />
-{% endif %}
-
-            <div class="card-body">
-
-                <h3>{{event}}</h3>
-                <p><i>{{event.event_data}}</i></p>
-
-              <p class="card-text">{{event.small_des|slice:":100"}}...</p>
-              <div class="d-flex justify-content-between align-items-center">
-
-                  <a class="stretched-link" href=" {% url 'show-event' event.id %} "><button type="button" style=" border-radius:30px;" class="btn btn-sm btn-outline-secondary">View</button>
-                  </a>
-                <small class="text-muted"><i>{{event.manager}}</i></small>
-              </div>
-            </div>
-          </div>
-        </div>
-             {% endfor %}
-</div>
 
 
 
@@ -83,7 +54,7 @@
 
     <div class="col-md-4" >
       <div class="card-body" style="">
-        <span class="card-subtitle">{{ event.manager }}</span>
+        <span class="card-subtitle">{{ event.manager }} | {{ event.event_data }}</span>
         <h2 class="card-title">{{ event }}</h2>
         <p class="card-text">{{ event.small_des|slice:":100" }}</p>
          <a href=" {% url 'show-event' event.id %} "><button type="button" style=" border-radius:30px;" class="btn btn-sm btn-outline-secondary">View</button>
